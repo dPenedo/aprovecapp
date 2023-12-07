@@ -34,6 +34,6 @@ public class Verduleria {
   private Point direccion;
   @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "verduleria")
   private List<Horario> horarios;
-  @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "ofertas")
+  @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "verduleria")
   private List<Oferta> ofertas;
 }
