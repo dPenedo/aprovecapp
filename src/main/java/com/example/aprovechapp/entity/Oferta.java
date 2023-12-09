@@ -23,6 +23,8 @@ public class Oferta {
   @GeneratedValue(generator = "uuid")
   @GenericGenerator(name = "uuid", strategy = "uuid2")
   private Long id;
+
+  // Una verduleria puede tener muchas ofertas
   @ManyToOne
   @JoinColumn(name = "verduleria_id")
   private Verduleria verduleria;

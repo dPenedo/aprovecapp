@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class ClientesController {
     @Autowired
     Verduleria verduleria;
+  //TODO seguir con ello
     @GetMapping
     List<Verduleria>
 

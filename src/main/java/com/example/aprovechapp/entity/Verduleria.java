@@ -28,12 +28,16 @@ public class Verduleria {
   private String nombre;
   private TipoDeVerduleria tipoDeVerduleria;
   private String numeroDeTelefono;
+
+  // Un administrador puede tener muchas verdulerias
   @ManyToOne
   @JoinColumn(name = "administrador_id")
   private Administrador administrador;
   private Point direccion;
+  // Una verduleria puede tener muchos horarios
   @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "verduleria")
   private List<Horario> horarios;
+  // Una verduleria puede tener muchas ofertaas
   @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "verduleria")
   private List<Oferta> ofertas;
 }
