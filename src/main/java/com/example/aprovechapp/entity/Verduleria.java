@@ -33,11 +33,12 @@ public class Verduleria {
   @ManyToOne
   @JoinColumn(name = "administrador_id")
   private Administrador administrador;
+
   private Point direccion;
-  // Una verduleria puede tener muchos horarios
-  @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "verduleria")
+  // Una verdulería puede tener muchos horarios
+  @OneToMany(mappedBy = "verduleria")
   private List<Horario> horarios;
-  // Una verduleria puede tener muchas ofertaas
-  @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "verduleria")
+  // Una verdulería puede tener muchas ofertas
+  @OneToMany(mappedBy = "verduleria")
   private List<Oferta> ofertas;
 }

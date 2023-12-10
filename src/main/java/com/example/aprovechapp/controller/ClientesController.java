@@ -13,8 +13,10 @@ public class ClientesController {
     @Autowired
     Verduleria verduleria;
   //TODO seguir con ello
-    @GetMapping
-    List<Verduleria>
+    @GetMapping("/")
+    public String index(){
+        return "index.html";
+    }
 
 
 
