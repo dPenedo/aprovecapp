@@ -2,6 +2,7 @@ package com.example.aprovechapp.entity;
 
 import java.awt.Point;
 import java.util.List;
+import java.util.UUID;
 
 import org.hibernate.annotations.GenericGenerator;
 
@@ -24,7 +25,7 @@ public class Verduleria {
   @Id
   @GeneratedValue(generator = "uuid")
   @GenericGenerator(name = "uuid", strategy = "uuid2")
-  private Long id;
+  private UUID id;
   private String nombre;
   private TipoDeVerduleria tipoDeVerduleria;
   private String numeroDeTelefono;

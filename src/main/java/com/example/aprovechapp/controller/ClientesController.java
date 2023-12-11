@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/")
 public class ClientesController {
-    @Autowired
-    Verduleria verduleria;
+//    @Autowired
+//    Verduleria verduleria;
   //TODO seguir con ello
     @GetMapping("/")
     public String index(){

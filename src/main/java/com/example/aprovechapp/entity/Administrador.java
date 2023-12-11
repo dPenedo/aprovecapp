@@ -7,6 +7,7 @@ import org.hibernate.annotations.GenericGenerator;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 @Entity
 @Getter
@@ -15,7 +16,7 @@ public class Administrador {
   @Id
   @GeneratedValue(generator = "uuid")
   @GenericGenerator(name = "uuid", strategy = "uuid2")
-  private Long id;
+  private UUID id;
   private String nombre;
   private String password;
   private String email;

@@ -1,6 +1,7 @@
 package com.example.aprovechapp.entity;
 
 import java.time.LocalDate;
+import java.util.UUID;
 
 import org.hibernate.annotations.GenericGenerator;
 
@@ -22,7 +23,7 @@ public class Oferta {
   @Id
   @GeneratedValue(generator = "uuid")
   @GenericGenerator(name = "uuid", strategy = "uuid2")
-  private Long id;
+  private UUID id;
 
   // Una verduleria puede tener muchas ofertas
   @ManyToOne

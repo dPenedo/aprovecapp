@@ -6,6 +6,8 @@ import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.GenericGenerator;
 
+import java.util.UUID;
+
 @Entity
 @Getter
 @Setter
@@ -13,7 +15,7 @@ public class Horario {
   @Id
   @GeneratedValue(generator = "uuid")
   @GenericGenerator(name = "uuid", strategy = "uuid2")
-  private Long id;
+  private UUID id;
   private DiaSemana diaSemana;
   private String horaDeApertura;
   private String horaDeCierre;
