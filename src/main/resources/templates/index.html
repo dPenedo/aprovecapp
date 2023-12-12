@@ -1,11 +1,260 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title>Aprovechapp</title>
-</head>
-<body>
-<h1>Index Aprovechapp</h1>
 
+<head>
+  <meta charset="UTF-8">
+  <title>Aprovechapp</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <!-- ------- -->
+  <!-- Navbar -->
+  <!----------  -->
+  <nav class="navbar navbar-expand-lg bg-body-tertiary border border-success shadow">
+    <div class="container-fluid">
+      <a class="navbar-brand px-4 px-xl-5" href="/"><img src="img/logo-aprovechapp.png" alt="" width="250px">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="d-flex collapse navbar-collapse justify-content-end me-5" id="navbarNav">
+        <ul class=" navbar-nav fs-4 ">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Registrate como verdulero/a</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Quienes somos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contacto</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- ------- -->
+  <!-- Navbar -->
+  <!----------  -->
+
+
+  <!-- ------- -->
+  <!-- Principal -->
+  <!----------  -->
+
+
+  <section>
+    <div class="container-fluid p-4 ps-5 border border-success shadow" style="background-color: #CBDDB8;">
+      <h3 class=" bold text-center">¡Bienvenidos y bienvenidas a AprovechApp!
+    </div>
+    <div class="container mx-auto my-5 px-lg-5 row">
+
+      <div class="px-xl-7 col-md-12 col-lg-7 col-xl-8"">
+
+        </h3>
+
+        <p>
+          En AprovechApp, nos enorgullece presentar una solución innovadora y sostenible para abordar el desperdicio
+          alimentario en el corazón de Mar del Plata, Argentina. Nos dedicamos a cambiar la perspectiva sobre los
+          descartes agrícolas en las verdulerías, transformándolos en oportunidades sabrosas y asequibles para todos.
+        </p>
+
+        <h5 class=" fw-semibold">
+        Nuestra Misión: Rescatar Sabores, Reducir Desperdicios
+        </h5>
+
+        <p>
+          Imagínate poder disfrutar de productos frescos y deliciosos a precios irresistibles. AprovechApp es más que
+          una aplicación web; es un compromiso con la sostenibilidad y la comunidad. Trabajamos de la mano con las
+          verdulerías locales para rescatar esos alimentos que, aunque perfectos en sabor y nutrición, pueden pasar
+          desapercibidos por razones estéticas o de madurez.
+        </p>
+        <h5 class="fw-semibold">
+          Cómo Funciona AprovechApp
+        </h5>
+
+        <p>
+          Explorar AprovechApp es sumergirse en un mercado virtual donde la frescura y la responsabilidad se
+          encuentran.
+          Los administradores de las verdulerías seleccionan cuidadosamente productos que, por diversas razones, no
+          cumplen con los estándares comerciales, pero que son una delicia para el paladar. Estos productos se ofrecen
+          a
+          precios muy bajos, brindando a nuestros usuarios la oportunidad de hacer compras conscientes y sostenibles.
+        </p>
+
+        <h5 class="fw-semibold">
+          Un Viaje desde el Campo hasta tu Mesa
+        </h5>
+
+        <p>
+          Con AprovechApp, te invitamos a embarcarte en un viaje que conecta directamente el campo con tu mesa. Cada
+          compra es una elección a favor de la sustentabilidad y en contra del desperdicio alimentario. Únete a
+          nosotros
+          mientras transformamos descartes en delicias y contribuimos juntos a un futuro más consciente y respetuoso
+          con
+          el medio ambiente.
+        </p>
+
+        <h5 class="fw-semibold">
+          Descubre, Saborea y Aprovecha con AprovechApp. ¡Bienvenido a una nueva forma de disfrutar la frescura!
+        </h5>
+
+
+
+
+      </div>
+
+
+      <div class="col-md-12 col-lg-6 col-xl-4 mx-auto text-center">
+        <img src="img/ensalada-imagen.jpg" alt="Imagen de ensalada" class="rounded-circle"
+          style="max-width: 350px; max-height: 350px;">
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ------- -->
+  <!-- Principal -->
+  <!----------  -->
+
+  <!-- ------- -->
+  <!-- Mapa -->
+  <!----------  -->
+
+  <section>
+    <div class="container-fluid p-4 ps-5 border border-success shadow" style="background-color: #CBDDB8;">
+      <h3 class=" bold text-center">Encontrá tus ofertas en Mar del plata
+    </div>
+
+
+    <div id="map" style="height: 400px; width: 100%"></div>
+
+
+
+  </section>
+
+  <!-- ------- -->
+  <!-- Mapa -->
+  <!----------  -->
+
+  <!-- ------- -->
+  <!-- Footer -->
+  <!----------  -->
+  <footer class="text-center text-lg-start bg-body-tertiary text-muted border border-success">
+    <!-- Section: Social media -->
+    <!-- Section: Links  -->
+    <section class="">
+      <div class="container text-center text-md-start mt-5">
+        <!-- Grid row -->
+        <div class="row mt-3">
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+            <!-- Content -->
+            <h6 class="text-uppercase fw-bold mb-4">
+              <i class="fas fa-gem me-3"></i>AprovechÁpp!
+            </h6>
+            <a class="navbar-brand" href="/"><img src="img/logo-aprovechapp.png" alt="" width="150px">
+            </a>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-4">
+              Redes Sociales
+            </h6>
+            <p>
+              <a href="#!" class="text-reset">Facebook</a>
+            </p>
+            <p>
+              <a href="#!" class="text-reset">Instagram</a>
+            </p>
+            <p>
+              <a href="#!" class="text-reset">Twitter</a>
+            </p>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-4">
+              Enlaces de interés
+            </h6>
+            <p>
+              <a href="#!" class="text-reset">Inicio</a>
+            </p>
+            <p>
+              <a href="#!" class="text-reset">Registrate como verdulero/a</a>
+            </p>
+            <p>
+              <a href="#!" class="text-reset">Quienes somos</a>
+            </p>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-4">Contactanos</h6>
+            <p><i class="fas fa-home me-3"></i> Mar del Plata, Av. Libertad 1200</p>
+            <p>
+              <i class="fas fa-envelope me-3"></i>
+              aprovechapp@aprovechapp.com
+            </p>
+            <p><i class="fas fa-phone me-3"></i> +54 223 567 2288</p>
+          </div>
+          <!-- Grid column -->
+        </div>
+        <!-- Grid row -->
+      </div>
+    </section>
+    <!-- Section: Links  -->
+
+    <!-- Copyright -->
+    <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+      © 2023 Copyright:
+      <a class="text-reset fw-bold" href="https://dpenedo.com/">dpenedo.com</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+
+  <!-- ------- -->
+  <!-- Footer -->
+  <!----------  -->
+
+
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC-4-uWax7_TnUkujfSvdUaQBMvKTw5Yvc&callback=initMap"
+    async defer></script>
+
+  <script>
+    function initMap() {
+      // Coordenadas de Mar del Plata, Argentina
+      var marDelPlata = {lat: -38.005, lng: -57.544};
+
+      // Crea el mapa centrado en Mar del Plata
+      var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 12,
+        center: marDelPlata
+      });
+
+      // Agrega un marcador en Mar del Plata
+      var marker = new google.maps.Marker({
+        position: marDelPlata,
+        map: map,
+        title: 'Mar del Plata'
+      });
+    }
+  </script>
 </body>
+
 </html>
