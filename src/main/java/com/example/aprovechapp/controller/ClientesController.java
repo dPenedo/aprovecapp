@@ -16,7 +16,4 @@ public class ClientesController {
     public String index(){
         return "index.html";
     }
-
-
-
 }
