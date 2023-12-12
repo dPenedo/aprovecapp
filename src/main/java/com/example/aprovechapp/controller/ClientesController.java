@@ -16,4 +16,8 @@ public class ClientesController {
     public String index(){
         return "index.html";
     }
+    @GetMapping("/la")
+    public String la(){
+        return "lalala";
+    }
 }
