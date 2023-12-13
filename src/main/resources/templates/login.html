@@ -21,49 +21,48 @@
 
 
   <!-- Mensaje de error -->
-  <div class="container-fluid m-5 ">
-    <div th:if="${error != null}" class="card text-white bg-danger mb-3">
-      <div class="card-body">
-        <h5 class="card-title">Error!</h5>
-        <p class="card-text" th:text="${error}"></p>
+  <div th:if="${error != null}" class="card text-white bg-danger mb-3">
+    <div class="card-body">
+      <h5 class="card-title">Error!</h5>
+      <p class="card-text" th:text="${error}"></p>
+    </div>
+  </div>
+  <!-- Mensaje de éxito -->
+  <div th:if="${exito != null}" class="card text-white bg-success mb-3 mt-3">
+    <div class="card-body">
+      <h5 class="card-title">Exito!</h5>
+      <p class="card-text" th:text="${exito}"></p>
+    </div>
+  </div>
+  <div class="container-fluid p-4 ps-5 border border-success shadow" style="background-color: #CBDDB8;">
+    <h3 class=" bold text-center">¡Accede como verdulero/a!</h3>
+  </div>
+
+  <!--  Formulario-->
+  <div class="container-fluid m-5 p-5">
+    <form class="col-md-10 col-lg-8 mx-auto" th:action="@{/logincheck}" method="POST">
+
+
+      <div class="form-group my-3">
+        <input type="email" class="form-control" name="email" placeholder="EMAIL" autofocus>
       </div>
-    </div>
-    <!-- Mensaje de éxito -->
-    <div th:if="${exito != null}" class="card text-white bg-success mb-3 mt-3">
-      <div class="card-body">
-        <h5 class="card-title">Exito!</h5>
-        <p class="card-text" th:text="${exito}"></p>
+
+      <div class="form-group my-3">
+        <input type="password" class="form-control" name="password" placeholder="CONTRASEÑA">
       </div>
-    </div>
 
-    <div class="container-fluid p-4 ps-5 border border-success shadow" style="background-color: #CBDDB8;">
-      <h3 class=" bold text-center">¡Accede como verdulero/a!</h3>
-    </div>
-
-    <div class="container-fluid m-5">
-      <form class="formulario" th:action="@{/logincheck}" method="POST">
-
-
-        <div class="form-group my-3">
-          <input type="email" class="form-control" name="email" placeholder="EMAIL">
+      <div>
+        <button type="submit" class="btn btn-success mt-3 px-5">Ingresar</button>
+        <div class="">
+          <a th:href="@{/}" class="btn btn-secondary mt-3 px-5 ">Volver</a>
         </div>
-
-        <div class="form-group my-3">
-          <input type="password" class="form-control" name="password" placeholder="CONTRASEÑA">
-        </div>
-
-        <div>
-          <button type="submit" class="btn btn-success mt-3 px-4">Ingresar</button>
-          <div class="">
-            <a th:href="@{/}" class="btn btn-secondary mt-3 px-4 ">Volver</a>
-          </div>
-        </div>
-      </form>
+      </div>
+    </form>
 
 
-    </div>
+  </div>
 
-    <div th:replace="fragments/footer :: footer"></div>
+  <div th:replace="fragments/footer :: footer"></div>
 
 
 </body>
