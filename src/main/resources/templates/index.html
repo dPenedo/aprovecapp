@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns: sec = "http://www.thymeleaf.org/extras/spring-security"
+      lang="en">
 
 <head>
   <meta charset="UTF-8">
@@ -13,47 +15,19 @@
     crossorigin="anonymous"></script>
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
-
-
 </head>
 
 <body>
-  <!-- ------- -->
-  <!-- Navbar -->
-  <!----------  -->
-  <nav class="navbar navbar-expand-lg bg-body-tertiary border border-success shadow">
-    <div class="container-fluid">
-      <a class="navbar-brand px-4 px-xl-5" href="/"><img src="img/logo-aprovechapp.png" alt="" width="250px">
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="d-flex collapse navbar-collapse justify-content-end me-5" id="navbarNav">
-        <ul class=" navbar-nav fs-5 ">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/">Inicio</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Registrate como verdulero/a</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Quienes somos</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Contacto</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-  <!-- ------- -->
-  <!-- Navbar -->
-  <!----------  -->
+
+
+  <!--TODO dividir la home sacando el navbar y el footer para reutirlizarlos-->
+<!--  <div th:insert="fragments/navbar :: navbar"></div>-->
+  <div th:replace="fragments/navbar :: navbar"></div>
+
 
 
   <!-- ------- -->
+
   <!-- Principal -->
   <!----------  -->
 
@@ -152,92 +126,7 @@
   <!-- Mapa -->
   <!----------  -->
 
-  <!-- ------- -->
-  <!-- Footer -->
-  <!----------  -->
-  <footer class="text-center text-lg-start bg-body-tertiary text-muted border border-success">
-    <!-- Section: Social media -->
-    <!-- Section: Links  -->
-    <section class="">
-      <div class="container text-center text-md-start mt-5">
-        <!-- Grid row -->
-        <div class="row mt-3">
-          <!-- Grid column -->
-          <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-            <!-- Content -->
-            <h6 class="text-uppercase fw-bold mb-4">
-              <i class="fas fa-gem me-3"></i>AprovechÁpp!
-            </h6>
-            <a class="navbar-brand" href="/"><img src="img/logo-aprovechapp.png" alt="" width="150px">
-            </a>
-          </div>
-          <!-- Grid column -->
-
-          <!-- Grid column -->
-          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-            <!-- Links -->
-            <h6 class="text-uppercase fw-bold mb-4">
-              Redes Sociales
-            </h6>
-            <p>
-              <a href="#!" class="text-reset">Facebook</a>
-            </p>
-            <p>
-              <a href="#!" class="text-reset">Instagram</a>
-            </p>
-            <p>
-              <a href="#!" class="text-reset">Twitter</a>
-            </p>
-          </div>
-          <!-- Grid column -->
-
-          <!-- Grid column -->
-          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-            <!-- Links -->
-            <h6 class="text-uppercase fw-bold mb-4">
-              Enlaces de interés
-            </h6>
-            <p>
-              <a href="#!" class="text-reset">Inicio</a>
-            </p>
-            <p>
-              <a href="#!" class="text-reset">Registrate como verdulero/a</a>
-            </p>
-            <p>
-              <a href="#!" class="text-reset">Quienes somos</a>
-            </p>
-          </div>
-          <!-- Grid column -->
-
-          <!-- Grid column -->
-          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-            <!-- Links -->
-            <h6 class="text-uppercase fw-bold mb-4">Contactanos</h6>
-            <p><i class="fas fa-home me-3"></i> Mar del Plata, Av. Libertad 1200</p>
-            <p>
-              <i class="fas fa-envelope me-3"></i>
-              aprovechapp@aprovechapp.com
-            </p>
-            <p><i class="fas fa-phone me-3"></i> +54 223 567 2288</p>
-          </div>
-          <!-- Grid column -->
-        </div>
-        <!-- Grid row -->
-      </div>
-    </section>
-    <!-- Section: Links  -->
-
-    <!-- Copyright -->
-    <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
-      © 2023 Copyright:
-      <a class="text-reset fw-bold" href="https://dpenedo.com/">dpenedo.com</a>
-    </div>
-    <!-- Copyright -->
-  </footer>
-
-  <!-- ------- -->
-  <!-- Footer -->
-  <!----------  -->
+  <div th:replace="fragments/footer :: footer"></div>
 
 
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC-4-uWax7_TnUkujfSvdUaQBMvKTw5Yvc&callback=initMap"

@@ -33,11 +33,11 @@ public class SecurityConfig{
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-//        TODO no carga bien, puede que haya lio de versiones
+//    TODO no carga bien, puede que haya lio de versiones
         http
                 .authorizeRequests()
-                .requestMatchers("/admin/**").hasRole("ROLE_ADMINISTRADOR")
-                .and().formLogin(Customizer.withDefaults())
+                .requestMatchers("/admin/**").hasRole("ADMINISTRADOR")
+                .and().formLogin()
                 .loginPage("/login")
                 .loginProcessingUrl("/logincheck")
                 .usernameParameter("email")
@@ -51,7 +51,44 @@ public class SecurityConfig{
                 .and().csrf().disable();
         return http.build();
     }
-
+//.csrf(csrf -> csrf
+//
+//            .disable())
+//
+//            .authorizeHttpRequests(authRequest -> authRequest
+//
+//            .requestMatchers("/auth/**").permitAll()
+//
+//                                                .requestMatchers("/admin/**").hasRole("ROLE_ADMINISTRADOR")
+//
+//                                                .anyRequest().authenticated())
+//
+//
+//
+//
+//            return http
+//
+//            .csrf(csrf -> csrf
+//
+//            .disable())
+//
+//            .authorizeHttpRequests(authRequest -> authRequest
+//
+//            .requestMatchers("/auth/**").permitAll()
+//
+//                                                .requestMatchers("/admin/**").hasRole("ROLE_ADMINISTRADOR")
+//
+//                                                .anyRequest().authenticated())
+//
+//            .sessionManagement(sessionManager -> sessionManager
+//
+//            .sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+//
+//            .authenticationProvider(authProvider)
+//
+//                                .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class)
+//
+//                                .build;
 
 
 

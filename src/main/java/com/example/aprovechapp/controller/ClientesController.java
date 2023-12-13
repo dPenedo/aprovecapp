@@ -20,4 +20,8 @@ public class ClientesController {
     public String homepage(){
         return "index.html";
     }
+    @GetMapping("/quienes-somos")
+    public String quienesSomos(){
+        return "quienes-somos.html";
+    }
 }
