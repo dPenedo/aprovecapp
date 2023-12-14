@@ -24,6 +24,7 @@
 <!--  <div th:insert="fragments/navbar :: navbar"></div>-->
   <div th:replace="fragments/navbar :: navbar"></div>
 
+  <p><span th:text="${username}"></span>!</p>
 
 
   <!-- ------- -->
@@ -95,7 +96,7 @@
 
 
       <div class="col-md-12 col-lg-6 col-xl-4 mx-auto text-center">
-        <img src="@{/img/ensalada-imagen.jpg}" alt="Imagen de ensalada" class="rounded-circle"
+        <img th:src="@{/img/ensalada-imagen.jpg}" alt="Imagen de ensalada" class="rounded-circle"
           style="max-width: 350px; max-height: 350px;">
       </div>
 
