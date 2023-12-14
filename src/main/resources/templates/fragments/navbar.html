@@ -41,11 +41,17 @@
             <a class="nav-link active" aria-current="page" href="/">Inicio</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/administrador/registrar">Registrate como verdulero/a</a>
+            <a th:if="${session.administradorsession == null}"  class="nav-link" href="/administrador/registrar">Registrate como verdulero/a</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/administrador/login">Ingresá como verdulero/a</a>
+            <a th:if="${session.administradorsession == null}" class="nav-link" href="/administrador/login">Ingresá como verdulero/a</a>
           </li>
+          <li class="nav-item">
+            <a th:if="${session.administradorsession != null}" class="nav-link" href="/administrador/logout">Ingresá como verdulero/a</a>
+          </li>
+<!--          <li class="nav-item">-->
+<!--            <a th:if="${session.administradorsession != null}" class="nav-link" href="/administrador/registrar-verduleria">Ingresá como verdulero/a</a>-->
+<!--          </li>-->
           <li class="nav-item">
             <a class="nav-link" href="/quienes-somos">Quiénes somos</a>
           </li>

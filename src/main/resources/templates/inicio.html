@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns: sec = "http://www.thymeleaf.org/extras/spring-security"
+      lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>AprovechÁpp! Ofertas sustentables</title>
+
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+
+
+  <!--TODO dividir la home sacando el navbar y el footer para reutirlizarlos-->
+<!--  <div th:insert="fragments/navbar :: navbar"></div>-->
+  <div th:replace="fragments/navbar :: navbar"></div>
+
+
+
+  <!-- ------- -->
+
+  <!-- Principal -->
+  <!----------  -->
+
+
+  <p>La movida</p>
+
+  <div th:replace="fragments/footer :: footer"></div>
+
+
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC-4-uWax7_TnUkujfSvdUaQBMvKTw5Yvc&callback=initMap"
+    async defer></script>
+
+  <script>
+    function initMap() {
+      // Coordenadas de Mar del Plata, Argentina
+      var marDelPlata = {lat: -38.005, lng: -57.544};
+
+      // Crea el mapa centrado en Mar del Plata
+      var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 12,
+        center: marDelPlata
+      });
+
+      // Agrega un marcador en Mar del Plata
+      var marker = new google.maps.Marker({
+        position: marDelPlata,
+        map: map,
+        title: 'Mar del Plata'
+      });
+    }
+  </script>
+</body>
+
+</html>

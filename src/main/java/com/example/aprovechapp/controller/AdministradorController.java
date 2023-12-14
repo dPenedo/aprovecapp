@@ -1,8 +1,11 @@
 package com.example.aprovechapp.controller;
 
+import com.example.aprovechapp.entity.Administrador;
 import com.example.aprovechapp.exceptions.MyException;
 import com.example.aprovechapp.service.impl.AdministradorServiceImpl;
+import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -43,4 +46,16 @@ public class AdministradorController {
         return "login.html";
     }
 
-}
+    @PreAuthorize("hasAnyRole('ROLE_ADMINISTRADOR')")
+    @GetMapping("/inicio")
+    public String inicio(HttpSession session) {
+        Administrador logueado = (Administrador) session.getAttribute("administradorsession");
+        if (logueado.getAuthorities().toString().equals("ADMIN")) {
+            return "redirect:/admin/dashboard";
+        }
+
+        return "inicio.html";
+    }
+
+
+    }

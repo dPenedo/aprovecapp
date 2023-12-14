@@ -33,9 +33,9 @@ public class SecurityConfig{
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-//    TODO no carga bien, puede que haya lio de versiones
         http
                 .authorizeRequests()
+                .requestMatchers("administrador/registro").permitAll()
                 .requestMatchers("/admin/**").hasRole("ADMINISTRADOR")
                 .and().formLogin()
                 .loginPage("/login")
