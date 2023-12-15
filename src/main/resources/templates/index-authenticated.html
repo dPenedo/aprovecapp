@@ -34,12 +34,47 @@
 
 <!--  <p class="tituloLibros" th:if="${session.usuariosession != null}"-->
 <!--     th:text=" 'Hola de vuelta, '+ ${session.usuariosession.nombre} "></p>-->
-  <p>Bienvenido/a <span th:text="${username}"></span></p>
+
+  <section>
+    <div class="container-fluid p-4 ps-5 border border-success shadow" style="background-color: #CBDDB8;">
+      <h3 class=" bold text-center">¡Bienvenid/a de nuevo <span th:text="${nombre}"></span>! </h3>
+    </div>
+  </section>
+
+  <section>
+    <div class="container-fluid p-4 ps-5 border border-success shadow" >
+      <h5 class=" bold ">Estas son tus verduerías registradas:</h5>
+    </div>
+
+    <div class="container-fluid">
+
+    </div>
+  </section>
+  <!-- ------- -->
+  <!-- Mapa -->
+  <!----------  -->
+
+  <section>
+    <div class="container-fluid p-4 ps-5 border border-success shadow" style="background-color: #CBDDB8;">
+      <h3 class=" bold text-center">Estas son las ofertas vigentes en Mar del plata</h3>
+    </div>
+
+
+    <div id="map" style="height: 400px; width: 100%"></div>
+
+
+
+  </section>
+
+  <!-- ------- -->
+  <!-- Mapa -->
+  <!----------  -->
+
   <div th:replace="fragments/footer :: footer"></div>
 
 
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC-4-uWax7_TnUkujfSvdUaQBMvKTw5Yvc&callback=initMap"
-    async defer></script>
+          async defer></script>
 
   <script>
     function initMap() {
@@ -60,6 +95,7 @@
       });
     }
   </script>
+
 </body>
 
 </html>

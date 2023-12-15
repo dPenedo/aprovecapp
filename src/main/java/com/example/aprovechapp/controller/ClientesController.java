@@ -1,12 +1,14 @@
 package com.example.aprovechapp.controller;
 
 import com.example.aprovechapp.entity.Administrador;
+import com.example.aprovechapp.entity.Verduleria;
 import com.example.aprovechapp.exceptions.MyException;
 import com.example.aprovechapp.service.impl.AdministradorServiceImpl;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -30,8 +32,12 @@ AdministradorServiceImpl administradorServiceImpl;
             String username = authentication.getName();
             Administrador logueado = (Administrador) administradorServiceImpl.encontrarAdministradorPorMail(username);
             String nombre = logueado.getNombre();
+
+            List<Verduleria> verdulerias = logueado.getVerdulerias();
+            model.addAttribute("verdulerias", verdulerias);
             model.addAttribute("username", username);
             model.addAttribute("nombre", nombre);
+
             return "index-authenticated.html";
         } else {
             return "index.html";
@@ -64,15 +70,15 @@ AdministradorServiceImpl administradorServiceImpl;
 
     @PostMapping("/registro")
     public String registro(@RequestParam String nombre, @RequestParam String email, @RequestParam String password,
-                           String password2, ModelMap modelo) {
+                           String password2, Model model) {
         try {
             administradorServiceImpl.registrarAdministrador(nombre, email, password, password2);
-            modelo.put("exito", "Administrador registrado correctamente!");
-            return "index.html";
+            model.addAttribute("exito", "Administrador registrado correctamente!");
+            return "index-authenticated.html";
         } catch (MyException ex) {
-            modelo.put("error", ex.getMessage());
-            modelo.put("nombre", nombre);
-            modelo.put("email", email);
+            model.addAttribute("error", ex.getMessage());
+            model.addAttribute("nombre", nombre);
+            model.addAttribute("email", email);
             return "registro.html";
         }
     }

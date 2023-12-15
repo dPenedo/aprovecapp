@@ -27,17 +27,16 @@ public class Verduleria {
   @GenericGenerator(name = "uuid", strategy = "uuid2")
   private UUID id;
   private String nombre;
-  private TipoDeVerduleria tipoDeVerduleria;
   private String numeroDeTelefono;
+  private TipoDeVerduleria tipoDeVerduleria;
 
   // Un administrador puede tener muchas verdulerias
   @ManyToOne
   @JoinColumn(name = "administrador_id")
   private Administrador administrador;
 
-  private String direccion;
-  private double latitude;
-  private double longitude;
+  private double latitud;
+  private double longitud;
   // Una verdulería puede tener muchos horarios
   @OneToMany(mappedBy = "verduleria")
   private List<Horario> horarios;

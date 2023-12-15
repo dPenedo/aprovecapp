@@ -74,14 +74,14 @@
       </div>
       <div class="form-group my-3">
 
-        <input type="email" class="form-control" name="tipoDeVerduleria" placeholder="Tipo de verdulería" th:value="${tipoDeVerduleria}">
+        <input type="tel" class="form-control" name="tipoDeVerduleria" placeholder="número de teléfono" th:value="${numeroDeTelefono}">
       </div>
 
       <div class="input-group mb-3">
         <div class="input-group-prepend">
           <label class="input-group-text" for="inputGroupSelect01">Tipo de verdulería</label>
         </div>
-        <select class="custom-select" id="inputGroupSelect01" name="tipoDeVerduleria"> <!-- Added name attribute -->
+        <select class="custom-select" id="inputGroupSelect01" name="tipoDeVerduleria" th:value="${tipoDeVerduleria}">
           <option selected>Elegí un tipo de verdulería...</option>
           <option value="COMUN">Común</option>
           <option value="ORGANICA">Orgánica</option>
@@ -91,17 +91,14 @@
 
 
       <div class="form-group my-3">
-        <input type="tel" class="form-control" name="numeroDeTelefono" placeholder="Número de teléfono" th:value="${numeroDeTelefono}">
-      </div>
-      <div class="form-group my-3">
-        <input type="text" class="form-control" name="direccion" placeholder="Dirección"
-          th:value="${direccion}">
+        <input type="text" class="form-control" name="direccion" placeholder="Dirección">
+<!--          th:value="${direccion}">-->
       </div>
 
       <div class="form-group my-3">
-      <input type="text" name="latitude" id="lat"/>
+      <input type="text" name="latitude" id="lat" th:value="${latitud}"/>
 
-      <input type="text" name="longitude" id="lng"/>
+      <input type="text" name="longitude" id="lng" th:value="${longitud}"/>
       </div>
 
 
