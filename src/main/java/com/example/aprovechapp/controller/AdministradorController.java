@@ -18,6 +18,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class AdministradorController {
     @Autowired
     AdministradorServiceImpl administradorServiceImpl;
-
-
+    @GetMapping("/registrar-verduleria")
+    public String registrarVerduleria() {
+        return "registro-verduleria.html";
     }
+}

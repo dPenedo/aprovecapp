@@ -31,11 +31,13 @@ public class SecurityConfig{
     }
 
 
+
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests()
                 .requestMatchers("/registro").permitAll()
+                .requestMatchers("/registro-verduleria").permitAll()
                 .requestMatchers("/admin/**").hasRole("ADMINISTRADOR")
                 .and().formLogin()
                 .loginPage("/login")
@@ -49,6 +51,7 @@ public class SecurityConfig{
                 .logoutSuccessUrl("/login")
                 .permitAll()
                 .and().csrf().disable();
+
         return http.build();
     }
 //.csrf(csrf -> csrf

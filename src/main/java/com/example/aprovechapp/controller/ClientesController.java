@@ -7,6 +7,7 @@ import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
@@ -23,16 +24,30 @@ public class ClientesController {
 @Autowired
 AdministradorServiceImpl administradorServiceImpl;
     @GetMapping("/")
-    public String index(Model model, Authentication authentication) {
+    public String index(Model model, Authentication authentication, HttpSession session) {
         if (authentication != null && authentication.isAuthenticated()) {
+
             String username = authentication.getName();
-//            List verdulerias = authentication
+            Administrador logueado = (Administrador) administradorServiceImpl.encontrarAdministradorPorMail(username);
+            String nombre = logueado.getNombre();
             model.addAttribute("username", username);
+            model.addAttribute("nombre", nombre);
             return "index-authenticated.html";
         } else {
             return "index.html";
         }
     }
+//    @Secured("ROLE_ADMINISTRADOR")
+//    @GetMapping("/")
+//    public String inicio(HttpSession session) {
+//        Administrador logueado = (Administrador) session.getAttribute("administradorsession");
+//        if (logueado.getAuthorities().toString().equals("ROLE_ADMINISTRADOR")) {
+//            return "redirect:/admin/dashboard";
+//        }
+//        return "index-authenticated.html";
+//    }
+
+
     @GetMapping("/home")
     public String homepage(){
         return "index.html";
@@ -81,13 +96,4 @@ AdministradorServiceImpl administradorServiceImpl;
         }
     }
 
-    @Secured("ROLE_ADMINISTRADOR")
-    @GetMapping("/inicio")
-    public String inicio(HttpSession session) {
-        Administrador logueado = (Administrador) session.getAttribute("administradorsession");
-        if (logueado.getAuthorities().toString().equals("ROLE_ADMINISTRADOR")) {
-            return "redirect:/admin/dashboard";
-        }
-        return "index-authenticated.html";
-    }
 }

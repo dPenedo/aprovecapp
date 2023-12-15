@@ -88,19 +88,29 @@ public class AdministradorServiceImpl implements AdministradorService, UserDetai
 
     }
 
-  @Override
-  public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
-    Administrador administrador = administradorRepository.findByEmail(email);
+    public Administrador encontrarAdministradorPorMail(String email){
+        Administrador administrador = administradorRepository.findByEmail(email);
 
-    if (administrador == null) {
-      throw new UsernameNotFoundException("Usuario no registrado con el email: " + email);
+        if (administrador == null) {
+            throw new UsernameNotFoundException("Usuario no registrado con el email: " + email);
+        }
+
+        return administrador; // Devuelve UserDetails, que en este caso es Administrador
     }
 
-    List<GrantedAuthority> authorities = Collections.singletonList(new SimpleGrantedAuthority("ROLE_ADMINISTRADOR"));
+    @Override
+    public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
+        Administrador administrador = administradorRepository.findByEmail(email);
 
-      return new User(administrador.getEmail(), administrador.getPassword(), authorities);
+        if (administrador == null) {
+            throw new UsernameNotFoundException("Usuario no registrado con el email: " + email);
+        }
 
-  }
+        List<GrantedAuthority> authorities = Collections.singletonList(new SimpleGrantedAuthority("ROLE_ADMINISTRADOR"));
 
+        return new User(administrador.getEmail(), administrador.getPassword(), authorities);
+
+    }
 
 }
+

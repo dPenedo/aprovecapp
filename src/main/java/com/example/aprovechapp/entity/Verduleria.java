@@ -35,7 +35,9 @@ public class Verduleria {
   @JoinColumn(name = "administrador_id")
   private Administrador administrador;
 
-  private Point direccion;
+  private String direccion;
+  private double latitude;
+  private double longitude;
   // Una verdulería puede tener muchos horarios
   @OneToMany(mappedBy = "verduleria")
   private List<Horario> horarios;

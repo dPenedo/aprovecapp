@@ -22,7 +22,7 @@
 
   <!--TODO dividir la home sacando el navbar y el footer para reutirlizarlos-->
 <!--  <div th:insert="fragments/navbar :: navbar"></div>-->
-  <div th:replace="fragments/navbar :: navbar"></div>
+  <div th:replace="fragments/navbar-authenticated :: navbar"></div>
 
 
 
@@ -32,8 +32,9 @@
   <!----------  -->
 
 
-  <p>La movida</p>
-  <p><span th:text="${username}"></span></p>
+<!--  <p class="tituloLibros" th:if="${session.usuariosession != null}"-->
+<!--     th:text=" 'Hola de vuelta, '+ ${session.usuariosession.nombre} "></p>-->
+  <p>Bienvenido/a <span th:text="${username}"></span></p>
   <div th:replace="fragments/footer :: footer"></div>
 
 
