@@ -12,17 +12,17 @@ import java.util.UUID;
 @Getter
 @Setter
 public class Horario {
-  @Id
-  @GeneratedValue(generator = "uuid")
-  @GenericGenerator(name = "uuid", strategy = "uuid2")
-  private UUID id;
-  private DiaSemana diaSemana;
-  private String horaDeApertura;
-  private String horaDeCierre;
+    @Id
+    @GeneratedValue(generator = "uuid")
+    @GenericGenerator(name = "uuid", strategy = "uuid2")
+    private UUID id;
+    private DiaSemana diaSemana;
+    private String horaDeApertura;
+    private String horaDeCierre;
 
-  // Una verduleria puede tener muchos horarios
-  @ManyToOne
-  @JoinColumn(name = "verduleria_id")
-  private Verduleria verduleria;
+    // Una verduleria puede tener muchos horarios
+    @ManyToOne
+    @JoinColumn(name = "verduleria_id")
+    private Verduleria verduleria;
 
 }
